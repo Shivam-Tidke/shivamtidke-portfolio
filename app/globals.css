@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Define color and font variables */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #476fd6;
+  --color-secondary: #202124;
+  --color-secondary-2: #818589;
+
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base global styles */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utility helpers for primary/secondary usage */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-secondary-2{
+ color: var(--color-secondary-2)
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.btn-primary {
+   @apply bg-primary text-white py-1.5 px-3 rounded-sm
+}
+ 
+/* Reset Bootstrap anchor styling site-wide */
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Change breadcrumb separator to a dot */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "·" !important;
+  color: inherit;   /* Same color as text */
+}
+
+.line{
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.line::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(111, 255, 14);
+  transition: all ease-in-out 0.3s;
+}
+
+.line:hover::after{
+  width: 100%;
+}
+
+
+@keyframes fadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
