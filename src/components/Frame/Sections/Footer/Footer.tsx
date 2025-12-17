@@ -13,7 +13,7 @@ import {
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-black text-gray-400 flex flex-col items-center">
+    <footer id="contact" className="bg-[#0b0f14]  text-gray-400 flex flex-col items-center">
       <div className="max-w-7xl w-full px-6 lg:px-20 py-20">
         
         {/* Main Grid */}

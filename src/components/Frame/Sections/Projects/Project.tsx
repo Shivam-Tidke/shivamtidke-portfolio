@@ -31,7 +31,7 @@ const projects = [
 
 export function Project() {
   return (
-    <section id="project" className="min-h-screen justify-center flex flex-col items-center ">
+    <section id="project" className="min-h-screen bg-[#0b0f14] justify-center flex flex-col items-center ">
       <div className="max-w-7xl  px-6 lg:px-20 xl:px-20 w-full sm:px-8 ">
         <h2 className="text-3xl font-bold text-primary mb-6">
           Projects

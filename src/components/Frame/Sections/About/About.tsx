@@ -3,7 +3,7 @@ import lite from "@/src/assets/image/lite.jpg";
 
 export function About() {
   return (
-    <section id="about" className="bg-black text-gray-300 flex flex-col items-center min-h-screen justify-center">
+    <section id="about" className="bg-[#0b0f14] flex flex-col items-center min-h-screen justify-center">
       <div
         className="
           min-h-[calc(100vh-150px)]

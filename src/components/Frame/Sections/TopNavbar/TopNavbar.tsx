@@ -23,7 +23,8 @@ export const TopNavbar: React.FC = () => {
   const isActive = (href: string): boolean => pathName === href;
 
   return (
-    <nav className=" flex  flex-col items-center  relative overflow-hidden my-4">
+    <nav className="  flex fixed top-0 left-0   flex-col items-center w-full z-50 overflow-hidden py-4 bg-[#0b0f14]/70 backdrop-blur-md
+  ">
    
       <section  className="  w-full cursor-pointer max-w-7xl flex  justify-between py-2 px-6 lg:px-20 xl:px-20 items-center">
         <div onClick={handleClick}>
@@ -57,7 +58,7 @@ export const TopNavbar: React.FC = () => {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-secondary focus:outline-none"
+            className="text-white  focus:outline-none"
           >
             {isOpen ? <RxCross1 size={28}/> : 
             <RxHamburgerMenu  size={28}/>
