@@ -22,16 +22,22 @@ import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io'
               sequence={[
                 'MERN Stack Developer',
                 1000,
+                'Next.js Developer',
+                1000,
                 'Frontend Developer',
                 1000,
                 'Web Developer',
-                1000,
+                1000
               ]}
               speed={50}
               repeat={Infinity}
               className="text-2xl sm:text-3xl text-primary drop-shadow-lg"
             />
+           
           </div>
+           <p className='mt-4'>I am a Full Stack Developer Intern working on real-world web applications
+using React, Next.js, and Node.js.
+</p>
 
           {/* BUTTONS */}
           <div className="mt-8 flex gap-6 flex-wrap">

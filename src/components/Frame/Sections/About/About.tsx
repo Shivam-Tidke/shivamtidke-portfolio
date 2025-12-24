@@ -21,16 +21,19 @@ export function About() {
           </h2>
 
           <p className="mt-6 text-justify leading-relaxed">
-            Hi there! 👋 I'm <span className="text-white font-semibold">Shivam Tidke</span>, a
-            passionate MERN Stack Developer. I build dynamic web applications
-            using MongoDB, Express.js, React.js, and Node.js.
+           I am currently working as a Full Stack Developer Intern, with hands-on
+experience in the MERN stack and Next.js. I contribute to building
+real-world web applications, focusing on frontend development, API
+integration, and authentication while working as part of a development
+team.
+
           </p>
 
-          <p className="mt-4 text-justify leading-relaxed">
+          {/* <p className="mt-4 text-justify leading-relaxed">
             I work on both front-end and back-end systems, love crafting clean UI
             with React, and scalable APIs with Node.js. Constant learning keeps
             me sharp and future-ready.
-          </p>
+          </p> */}
 
           <p className="mt-4 text-justify leading-relaxed">
             Let’s collaborate and build something impactful together 🚀
