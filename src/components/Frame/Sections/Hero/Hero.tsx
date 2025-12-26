@@ -41,8 +41,8 @@ using React, Next.js, and Node.js.
 
           {/* BUTTONS */}
           <div className="mt-8 flex gap-6 flex-wrap">
-            <Link href="#contact">
-              <button className="bg-white px-4 py-1 text-black font-semibold">Get In Touch</button>
+            <Link href="#project">
+              <button className="bg-white px-4 py-1 text-black font-semibold">View Projects</button>
             </Link>
 
             <a
