@@ -26,7 +26,7 @@ export const TopNavbar: React.FC = () => {
     <nav className="  flex fixed top-0 left-0   flex-col items-center w-full z-50 overflow-hidden py-4 bg-[#0b0f14]/70 backdrop-blur-md
   ">
    
-      <section  className="  w-full cursor-pointer max-w-7xl flex  justify-between py-2 px-6 lg:px-20 xl:px-20 items-center">
+      <section  className=" max-w-7xl w-full cursor-pointer flex  justify-between py-2 px-6 lg:px-20 xl:px-20 items-center">
         <div onClick={handleClick}>
         <h4 className={`text-xl  font-bold  ${isOpen ? 'hidden' : 'block'}`}> <span className="text-primary">Shivam</span> Tidke</h4>
 

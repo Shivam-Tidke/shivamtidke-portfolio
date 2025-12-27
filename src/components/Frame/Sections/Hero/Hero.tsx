@@ -8,7 +8,7 @@ import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io'
 
  export const Hero = () => {
   return (
-    <section className="flex w-full bg-[#0b0f14] flex-col items-center justify-center relative overflow-hidden min-h-screen">
+    <section className="flex w-full bg-[#0b0f14] flex-col items-center justify-center relative overflow-hidden 2xL:py-30 py-15  xl:py-30">
       <div className="grid w-full  grid-cols-1  sm:grid-cols-2 items-center  max-w-7xl px-6 xl:px-20 lg:px-20 py-10">
 
         {/* LEFT CONTENT */}
