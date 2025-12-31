@@ -1,42 +1,74 @@
 'use client'
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
+import gsap from "gsap";
 export const TopNavbar: React.FC = () => {
-  
+
+  const logoRef = useRef<HTMLHeadingElement | null>(null);
+
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-    const scrollToForm = () => {
+  const scrollToForm = () => {
     document
       .getElementById("ConsultationForm")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const router = useRouter();
-  const handleClick=()=>{
+  const handleClick = () => {
     router.push("/");
   }
 
   const isActive = (href: string): boolean => pathName === href;
+  useEffect(() => {
+    if (!logoRef.current) return;
 
+    const chars = logoRef.current.querySelectorAll(".logo-char");
+
+    gsap.fromTo(
+      chars,
+       {  x: -100, rotate:-10, opacity: 0 },
+      {
+        x:0,
+        rotate:1,
+        opacity: 1,
+        duration: 1.3,
+        ease: "elastic.out(1,0.3)",
+        transformOrigin:"left top",
+        stagger: {
+          each: 0.1,
+          from: "random"
+        },
+      }
+    );
+  }, []);
   return (
     <nav className="  flex fixed top-0 left-0   flex-col items-center w-full z-50 overflow-hidden py-4 bg-[#0b0f14]/70 backdrop-blur-md
   ">
-   
-      <section  className=" max-w-7xl w-full cursor-pointer flex  justify-between py-2 px-6 lg:px-20 xl:px-20 items-center">
+
+      <section className=" max-w-7xl w-full cursor-pointer flex  justify-between py-2 px-6 lg:px-20 xl:px-20 items-center">
         <div onClick={handleClick}>
-        <h4 className={`text-xl  font-bold  ${isOpen ? 'hidden' : 'block'}`}> <span className="text-primary">Shivam</span> Tidke</h4>
+          <h4
+            ref={logoRef}
+            className={`text-xl font-bold flex ${isOpen ? "hidden" : "block"}`}
+          >
+            {"Shivam Tidke".split("").map((char, i) => (
+              <span key={i} className="inline-block logo-char">
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </h4>
 
         </div>
 
-       
+
         <div className="hidden lg:flex ml-10">
           <ul className="flex md:gap-8 lg:gap-8 nav_list text-secondary-2 font-semibold">
-            
-              <li className={`${isActive("/services") ? "text-primary " : ""}`}>
+
+            <li className={`${isActive("/services") ? "text-primary " : ""}`}>
               <Link href={"/"}>Home</Link>
             </li>
             <li className={`${isActive("/about") ? "text-primary" : ""}`}>
@@ -45,14 +77,14 @@ export const TopNavbar: React.FC = () => {
             <li className={`${isActive("/blogs") ? "text-primary" : ""}`}>
               <Link href={"#project"}>Projects</Link>
             </li>
-            <li  className={`${isActive("/contact") ? "text-primary" : ""}`}>
+            <li className={`${isActive("/contact") ? "text-primary" : ""}`}>
               <Link href={"#contact"}>Contact</Link>
             </li>
           </ul>
         </div>
 
 
-       
+
 
 
         <div className="lg:hidden">
@@ -60,8 +92,8 @@ export const TopNavbar: React.FC = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="text-white  focus:outline-none"
           >
-            {isOpen ? <RxCross1 size={28}/> : 
-            <RxHamburgerMenu  size={28}/>
+            {isOpen ? <RxCross1 size={28} /> :
+              <RxHamburgerMenu size={28} />
             }
           </button>
         </div>
@@ -71,7 +103,7 @@ export const TopNavbar: React.FC = () => {
       {isOpen && (
         <div className="lg:hidden px-6 pb-6">
           <ul className="flex flex-col gap-4 text-primary">
-           
+
             <li className={`${isActive("/services") ? "text-primary" : ""}`}>
               <Link href={"/"} onClick={() => setIsOpen(false)}>Home</Link>
             </li>
@@ -86,7 +118,7 @@ export const TopNavbar: React.FC = () => {
             </li>
           </ul>
 
-        
+
         </div>
       )}
     </nav>
