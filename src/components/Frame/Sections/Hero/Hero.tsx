@@ -91,7 +91,7 @@ export const Hero = () => {
             </Link>
 
             <a
-              href="/Shivam_Tidke-MERN-Dev.pdf"
+              href="/Shivam-Tidke-MERN-Dev.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
